@@ -3,6 +3,12 @@ const startBtnEl = document.querySelector(".btn-start");
 
 const resetBtnEl = document.querySelector(".btn-reset");
 
+const formEl = document.querySelector(".form");
+
+const inputEl = document.querySelector(".input");
+
+const ulEl = document.querySelector(".list");
+
 const hourEl = document.getElementById("hour");
 
 const mintueEl = document.getElementById("minute");
@@ -25,6 +31,19 @@ startBtnEl.addEventListener("click", ()=>{
     }
 
 
+});
+
+resetBtnEl.addEventListener("click", ()=>{
+    timer= -1;
+    updateTimer();
+
+    startBtnEl.innerText = "start";
+});
+
+formEl.addEventListener("submit", (event)=>{
+    event.preventDefault(); // to prevent auto refresh after submit
+    addNote();
+    
 });
 
 function convertTime(timer){
@@ -64,5 +83,42 @@ function updateTimer(){
             updateTimer();
         }
     } , 1000);
+
+}
+
+function addNote(Note){
+    let newNote = inputEl.value;
+    if(Note){
+        newNote = Note.name;
+    }
+
+    if(newNote.length == 0){
+        return;
+    }
+
+    const liEl = document.createElement("li");
+    liEl.innerHTML = `<div class = "div-text">${newNote}</div>`;
+    inputEl.value = "";
+
+
+    
+    
+    
+    const trashBtnEl = document.createElement("div");
+    trashBtnEl.innerHTML = `<i class="fa-solid fa-trash">`;
+    
+    const noteTimeEl = document.createElement("div");
+    noteTimeEl.classList.add("note-time")
+    const time = convertTime(timer);
+
+    noteTimeEl.innerHTML = `<div class = "note-hour">${time[0]}</div>:<div class = "note-minute">${time[1]}</div>:<div class = "note-second">${time[2]}</div>`;
+    liEl.appendChild(noteTimeEl);
+    liEl.appendChild(trashBtnEl);
+    ulEl.insertBefore(liEl , ulEl.firstChild) ;
+
+
+    trashBtnEl.addEventListener("click" , ()=>{
+        liEl.remove();
+    });
 
 }

@@ -133,3 +133,11 @@ h1{
     font-weight: bold;
     cursor: pointer;
 }
+
+.note-time{
+    position: absolute;
+    display: flex;
+    right: 5%;
+    top : 50%;
+    transform: translateY(-50%);
+}
