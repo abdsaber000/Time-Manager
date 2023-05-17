@@ -27,14 +27,6 @@ startBtnEl.addEventListener("click", ()=>{
 
 });
 
-resetBtnEl.addEventListener("click", ()=>{
-    timer= -1;
-    updateTimer();
-
-    startBtnEl.innerText = "start";
-});
-
-
 function convertTime(timer){
     let hour = Math.floor( timer / (60 * 60));
     timer %= 60 * 60;
