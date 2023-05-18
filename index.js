@@ -17,16 +17,19 @@ const secondEl = document.getElementById("second");
 
 let timer = 0;
 
+var tempVar = 0;
 startBtnEl.addEventListener("click", ()=>{
     if(startBtnEl.innerText == "start"){
         startBtnEl.innerText = "pause";
+
     }else{
+        clearTimeout(tempVar);
         startBtnEl.innerText = "start";
     }
 
     // after the button is triggered
     if(startBtnEl.innerText == "pause"){
-
+        clearTimeout(tempVar);
         updateTimer();
     }
 
@@ -87,8 +90,7 @@ function updateTimer(){
     mintueEl.innerText = time[1];
 
     secondEl.innerText = time[2];
-
-    setTimeout(()=>{
+    tempVar = setTimeout(()=>{
         if(startBtnEl.innerText == "pause"){
             updateTimer();
         }
