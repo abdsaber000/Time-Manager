@@ -34,10 +34,9 @@ startBtnEl.addEventListener("click", ()=>{
 });
 
 resetBtnEl.addEventListener("click", ()=>{
-    timer= -1;
-    updateTimer();
+    
+    resetTimer();
 
-    startBtnEl.innerText = "start";
 });
 
 formEl.addEventListener("submit", (event)=>{
@@ -67,6 +66,17 @@ function convertTime(timer){
 
     let time = [hour,minute,second];
     return time;
+}
+
+function resetTimer(){
+    timer = 0;
+    let time = convertTime(timer);
+    hourEl.innerText = time[0];
+
+    mintueEl.innerText = time[1];
+
+    secondEl.innerText = time[2];
+    startBtnEl.innerText = "start";
 }
 
 function updateTimer(){
