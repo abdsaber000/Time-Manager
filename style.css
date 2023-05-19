@@ -74,6 +74,7 @@ h1{
     width: 80%;
     margin: 0px;
     border-radius: 10px;
+    font-size: 15px;
 }
 
 .input::placeholder{
@@ -93,12 +94,12 @@ h1{
 
 .note-title{
     font-size: large;
-    flex-grow: 4;
+    width: 470px;
+    text-align: left;
 }
 
 .note-container{
     display: flex;
-    justify-content: space-between;
 }
 
 .notes-list li .fa-trash{
@@ -111,4 +112,6 @@ h1{
 .note-time{
     right: 5%;
     margin-right: 5px;
+    width: 130px;
+    font-size: 15px;
 }
