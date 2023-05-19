@@ -84,6 +84,7 @@ h1{
 .notes-list{
     padding: 0px;
     margin: 0px;
+    border-top: 2px dotted black;
 }
 
 .notes-list li{
