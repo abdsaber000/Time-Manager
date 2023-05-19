@@ -95,8 +95,9 @@ h1{
 
 .note-title{
     font-size: large;
-    width: 470px;
+    width: 400px;
     text-align: left;
+    word-wrap: break-word;
 }
 
 .note-container{
