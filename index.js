@@ -138,6 +138,6 @@ function addNote(Note){
         liEl.remove();
     });
 
-    ulEl.appendChild(liEl);
+    ulEl.insertBefore(liEl, ulEl.firstChild);
 
 }
