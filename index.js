@@ -109,29 +109,35 @@ function addNote(Note){
     }
 
     const liEl = document.createElement("li");
+    const time = convertTime(timer);
     liEl.classList.add("note-container");
-    liEl.innerHTML = `<div class = "note-title">${newNote}</div>`;
+    liEl.innerHTML = `
+        <div class = "note-title">
+            ${newNote}
+        </div>
+        <div class = "note-time">
+            <span class = "note-hour">
+                ${time[0]}
+            </span>:
+            <span class = "note-minute">
+                ${time[1]}
+            </span>:
+            <span class = "note-second">
+                ${time[2]}
+            </span>
+        </div>
+        <div>
+            <i class="fa-solid fa-trash"></i>
+        </div>
+    `;
+
+
     inputEl.value = "";
 
-
-    
-    
-    
-    const trashBtnEl = document.createElement("div");
-    trashBtnEl.innerHTML = `<i class="fa-solid fa-trash">`;
-    
-    const noteTimeEl = document.createElement("div");
-    noteTimeEl.classList.add("note-time")
-    const time = convertTime(timer);
-
-    noteTimeEl.innerHTML = `<span class = "note-hour">${time[0]}</span>:<span class = "note-minute">${time[1]}</span>:<span class = "note-second">${time[2]}</span>`;
-    liEl.appendChild(noteTimeEl);
-    liEl.appendChild(trashBtnEl);
-    ulEl.insertBefore(liEl , ulEl.firstChild) ;
-
-
-    trashBtnEl.addEventListener("click" , ()=>{
+    liEl.children[2].addEventListener("click" , ()=>{
         liEl.remove();
     });
+
+    ulEl.appendChild(liEl);
 
 }
