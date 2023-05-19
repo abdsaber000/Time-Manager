@@ -3,11 +3,11 @@ const startBtnEl = document.querySelector(".btn-start");
 
 const resetBtnEl = document.querySelector(".btn-reset");
 
-const formEl = document.querySelector(".form");
+const formEl = document.querySelector(".notes-form");
 
-const inputEl = document.querySelector(".input");
+const inputEl = document.querySelector(".note-input");
 
-const ulEl = document.querySelector(".list");
+const ulEl = document.querySelector(".notes-list");
 
 const hourEl = document.getElementById("hour");
 
@@ -109,7 +109,8 @@ function addNote(Note){
     }
 
     const liEl = document.createElement("li");
-    liEl.innerHTML = `<div class = "div-text">${newNote}</div>`;
+    liEl.classList.add("note-container");
+    liEl.innerHTML = `<div class = "note-title">${newNote}</div>`;
     inputEl.value = "";
 
 
@@ -123,7 +124,7 @@ function addNote(Note){
     noteTimeEl.classList.add("note-time")
     const time = convertTime(timer);
 
-    noteTimeEl.innerHTML = `<div class = "note-hour">${time[0]}</div>:<div class = "note-minute">${time[1]}</div>:<div class = "note-second">${time[2]}</div>`;
+    noteTimeEl.innerHTML = `<span class = "note-hour">${time[0]}</span>:<span class = "note-minute">${time[1]}</span>:<span class = "note-second">${time[2]}</span>`;
     liEl.appendChild(noteTimeEl);
     liEl.appendChild(trashBtnEl);
     ulEl.insertBefore(liEl , ulEl.firstChild) ;
