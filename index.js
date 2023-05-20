@@ -3,11 +3,11 @@ const startBtnEl = document.querySelector(".btn-start");
 
 const resetBtnEl = document.querySelector(".btn-reset");
 
-const formEl = document.querySelector(".form");
+const formEl = document.querySelector(".notes-form");
 
-const inputEl = document.querySelector(".input");
+const inputEl = document.querySelector(".note-input");
 
-const ulEl = document.querySelector(".list");
+const ulEl = document.querySelector(".notes-list");
 
 const hourEl = document.getElementById("hour");
 
@@ -109,28 +109,35 @@ function addNote(Note){
     }
 
     const liEl = document.createElement("li");
-    liEl.innerHTML = `<div class = "div-text">${newNote}</div>`;
+    const time = convertTime(timer);
+    liEl.classList.add("note-container");
+    liEl.innerHTML = `
+        <div class = "note-title">
+            ${newNote}
+        </div>
+        <div class = "note-time">
+            <span class = "note-hour">
+                ${time[0]}
+            </span>:
+            <span class = "note-minute">
+                ${time[1]}
+            </span>:
+            <span class = "note-second">
+                ${time[2]}
+            </span>
+        </div>
+        <div class="note-delete">
+            <i class="fa-solid fa-trash"></i>
+        </div>
+    `;
+
+
     inputEl.value = "";
 
-
-    
-    
-    
-    const trashBtnEl = document.createElement("div");
-    trashBtnEl.innerHTML = `<i class="fa-solid fa-trash">`;
-    
-    const noteTimeEl = document.createElement("div");
-    noteTimeEl.classList.add("note-time")
-    const time = convertTime(timer);
-
-    noteTimeEl.innerHTML = `<div class = "note-hour">${time[0]}</div>:<div class = "note-minute">${time[1]}</div>:<div class = "note-second">${time[2]}</div>`;
-    liEl.appendChild(noteTimeEl);
-    liEl.appendChild(trashBtnEl);
-    ulEl.insertBefore(liEl , ulEl.firstChild) ;
-
-
-    trashBtnEl.addEventListener("click" , ()=>{
+    liEl.children[2].addEventListener("click" , ()=>{
         liEl.remove();
     });
+
+    ulEl.insertBefore(liEl, ulEl.firstChild);
 
 }

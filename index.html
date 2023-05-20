@@ -11,38 +11,41 @@
 </head>
 <body>
     <h1>Time Manager</h1>
-    <div class  = "timer-container">
-        <div id = "hour">00</div>
-        <div id = "minute">00</div>
-        <div id = "second">00</div>
-    </div>
-    <div class = "btn">
-        <button class="btn-start">start</button>
-        <button class="btn-reset">reset</button>
+    <div class="container">
+        <div class  = "timer-container">
+            <span id = "hour">00</span>
+            <span id = "minute">00</span>
+            <span id = "second">00</span>
+        </div>
+        <div class = "btn">
+            <button class="btn-start">start</button>
+            <button class="btn-reset">reset</button>
+        </div>
+        <div class="white-sec">
+            <form  class="notes-form">
+                <input type="text" class="note-input" placeholder="Enter your note" autocomplete="off">
+                <button class="btn-take-note">take note</button>
+            </form>
+            <div>
+                <ul class="notes-list">
 
+                    <!-- <li class="note-container">
+                        <div class = "note-title">
+                            Do Homework
+                        </div> 
+                        <div class = "note-time">
+                            <span class = "note-hour">00</span>:
+                            <span class = "note-minute">00</span>:
+                            <span class = "note-second">00</span>
+                        </div>
+                        <i class="fa-solid fa-trash"></i>
+                    </li> -->
+                    
+                    
+                </ul>
+            </div>
+        </div>
     </div>
-    <form  class="form">
-        <input type="text" class="input" placeholder="Enter your task" autocomplete="off">
-        <button class="btn-take-note">take note</button>
-        <ul class="list">
-
-            <!--
-            <li ><div class = "div-text">Do Homework</div> 
-                <div class = "note-time">
-                    <div class = "note-hour">00</div>:
-                    <div class = "note-minute">00</div>:
-                    <div class = "note-second">00</div>
-                </div>  <i class="fa-solid fa-trash"></i></li>
-            <li><div class = "div-text">Buy Milk</div>
-                <div class = "note-time">
-                    <div class = "note-hour">00</div>:
-                    <div class = "note-minute">00</div>:
-                    <div class = "note-second">00</div>
-                </div>  <i class="fa-solid fa-trash"></i></li>
-            -->
-            
-        </ul>
-    </form>
     <script src="index.js"></script>
 </body>
 </html>
