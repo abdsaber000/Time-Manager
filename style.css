@@ -55,6 +55,8 @@ h1{
     border: none;
     background: white;
     font-size: 15px;
+    width: 20%;
+    border-radius: 10px;
 }
 
 
@@ -65,6 +67,7 @@ h1{
 
 .notes-form{
     padding: 0px;
+    display: flex;
 }
 
 .note-input{
@@ -75,6 +78,7 @@ h1{
     margin: 0px;
     border-radius: 10px;
     font-size: 15px;
+    padding-left: 3px;
 }
 
 .input::placeholder{
@@ -93,12 +97,7 @@ h1{
     font-family: 'Courier New', Courier, monospace;
 }
 
-.note-title{
-    font-size: large;
-    width: 400px;
-    text-align: left;
-    word-wrap: break-word;
-}
+
 
 .note-container{
     display: flex;
@@ -109,11 +108,26 @@ h1{
     cursor: pointer;
 }
 
+.note-title{
+    font-size: large;
+    width: 80%;
+    text-align: left;
+    word-wrap: break-word;
+}
+
 
 
 .note-time{
-    right: 5%;
-    margin-right: 5px;
-    width: 130px;
-    font-size: 15px;
+    width: 15%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-delete{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

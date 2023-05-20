@@ -126,7 +126,7 @@ function addNote(Note){
                 ${time[2]}
             </span>
         </div>
-        <div>
+        <div class="note-delete">
             <i class="fa-solid fa-trash"></i>
         </div>
     `;
